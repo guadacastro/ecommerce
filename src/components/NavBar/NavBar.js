@@ -1,4 +1,4 @@
-import CartWidget from '../cartWidget/CartWidget.js';
+import CartWidget from '../CartWidget/CartWidget.js';
 import logo from './assets/Aiko-logo.jpeg';
 const NavBar = () => {
     return (
