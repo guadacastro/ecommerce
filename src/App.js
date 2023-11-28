@@ -8,6 +8,7 @@ import Layout from './components/Layout.js';
 import Home from './pages/Home.js';
 import Category from './pages/Category.js';
 import Product from './pages/Product.js';
+import Design from './pages/Design.js';
 
 function App () {
     return (
@@ -21,6 +22,7 @@ function App () {
                     <Route index element={ <Home/> }/>
                     <Route path='/category/:categoryId' element={ <Category/> }/>
                     <Route path='/item/:itemId' element={<Product />} />
+                    <Route path="/design" element={<Design />} />
                     <Route path='*' element={<h1>404 NOT FOUND</h1>} />
                 </Routes>
             </BrowserRouter>
