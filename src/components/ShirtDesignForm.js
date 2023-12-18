@@ -3,8 +3,10 @@ import React, { useState } from 'react';
 // Importa axios para hacer llamadas HTTP
 import axios from 'axios';
 
+
 // Tu componente ShirtDesignForm recibe onDesignReady como prop
-const ShirtDesignForm = ({ onDesignReady }) => {
+  const ShirtDesignForm = ({ onDesignReady }) => {
+    console.log(process.env.REACT_APP_OPENAI_API_KEY);
   // Define el estado description para almacenar la descripción del usuario
   const [description, setDescription] = useState('');
   // Define el estado loading para gestionar si se está cargando la solicitud
