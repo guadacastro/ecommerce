@@ -1,7 +1,25 @@
+import { useContext, useState } from "react";
 import ItemCount from "../ItemCount/ItemCount";
+import { Link } from 'react-router-dom'
+import { CartContext } from "../../context/CartContext";
 
 const ItemDetail = ({id, title, image, category, description, price, stock}) => {
-    console.log('[*] Stock actual (count):', stock)
+    console.log('[*] Stock actual (count):', stock);
+
+    const [quantityAdded, setQuantityAdded] = useState(0);
+
+    const { addItem } = useContext(CartContext)
+
+    const handleOnAdd = (quantity) => {
+        setQuantityAdded(quantity);
+
+        const item = {
+            id, title, price
+        }
+
+        addItem(item, quantity)
+    }
+
     return (
         <article className='flex flex-wrap justify-center items-start md:items-center py-10'>
             <div className="flex justify-center w-full md:w-1/2 px-4">
@@ -15,7 +33,14 @@ const ItemDetail = ({id, title, image, category, description, price, stock}) => 
                     <p className='text-lg font-semibold'>${price}</p>
                 </section>
                 <div>
-                    <ItemCount initial={1} stock={stock} onAdd={(quantity) => console.log('[+] Cantidad agregada', quantity )} />
+                    {
+                        quantityAdded > 0 ? (
+                            <Link to='./cart'>Terminar Compra</Link>
+                        ) : (
+                            <ItemCount  initial={1} stock={stock} onAdd={handleOnAdd} />
+                        )
+                    }
+                     {/* <ItemCount initial={1} stock={stock} onAdd={(quantity) => console.log('[+] Cantidad agregada', quantity )} /> */}
                 </div>
             </div>
         </article>

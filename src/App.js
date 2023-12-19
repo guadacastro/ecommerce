@@ -9,6 +9,7 @@ import Home from './pages/Home.js';
 import Category from './pages/Category.js';
 import Product from './pages/Product.js';
 import Design from './pages/Design.js';
+import { CartProvider } from './context/CartContext.js';
 
 function App () {
     return (
@@ -17,14 +18,16 @@ function App () {
             <ItemListContainer greeting={'Welcome!'} />
             <ItemDetailContainer /> */}
             <BrowserRouter>
-                <Routes>
-                    <Route path="/" element={ <Home/> } />
-                    <Route index element={ <Home/> }/>
-                    <Route path='/category/:categoryId' element={ <Category/> }/>
-                    <Route path='/item/:itemId' element={<Product />} />
-                    <Route path="/design" element={<Design />} />
-                    <Route path='*' element={<h1>404 NOT FOUND</h1>} />
-                </Routes>
+                <CartProvider>
+                    <Routes>
+                        <Route path="/" element={ <Home/> } />
+                        <Route index element={ <Home/> }/>
+                        <Route path='/category/:categoryId' element={ <Category/> }/>
+                        <Route path='/item/:itemId' element={<Product />} />
+                        <Route path="/design" element={<Design />} />
+                        <Route path='*' element={<h1>404 NOT FOUND</h1>} />
+                    </Routes>
+                </CartProvider>
             </BrowserRouter>
         </div>
 
