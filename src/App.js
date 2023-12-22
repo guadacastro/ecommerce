@@ -10,6 +10,7 @@ import Category from './pages/Category.js';
 import Product from './pages/Product.js';
 import Design from './pages/Design.js';
 import { CartProvider } from './context/CartContext.js';
+import Cart from './components/Cart/Cart.js';
 
 function App () {
     return (
@@ -25,6 +26,7 @@ function App () {
                         <Route path='/category/:categoryId' element={ <Category/> }/>
                         <Route path='/item/:itemId' element={<Product />} />
                         <Route path="/design" element={<Design />} />
+                        <Route path='/cart' element={<Cart />} />
                         <Route path='*' element={<h1>404 NOT FOUND</h1>} />
                     </Routes>
                 </CartProvider>
