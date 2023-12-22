@@ -16,13 +16,13 @@ const Cart = () => {
     }
 
     return (
-        <div className="flex">
-            <div className="flex flex-row">
+        <div className="flex flex-row grid-cols-1">
+        
                 {cart.map( p => <CartItem key={p.id} {...p} />)}
                 <h3>Total: ${total()}</h3>
                 <button onClick={() => clearCart()} >Limpiar Carrito</button>
                 <Link to='./checkout'>Checkout</Link>
-            </div>
+    
 
         </div>
     )
