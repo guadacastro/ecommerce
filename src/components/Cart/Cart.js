@@ -16,7 +16,7 @@ const Cart = () => {
     }
 
     return (
-        <div className="flex flex-col grid-cols-1">
+        <div className="flex flex-col grid-cols-1 m-4">
         
                 {cart.map( p => <CartItem key={p.id} {...p} />)}
                 <div className=" m-10 flex flex-row justify-between" >
