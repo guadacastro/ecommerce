@@ -31,7 +31,7 @@ const ItemDetail = ({id, title, image, category, description, price, stock}) => 
                 <section className='mb-6'>
                     <h2 className='text-2xl font-bold mb-3'>{title}</h2>
                     <p className='text-sm text-gray-500 mb-1 uppercase tracking-wide'>{category}</p>
-                    <p className='text-gray-700 mb-3 mr-36'>{description}</p>
+                    <p className='text-gray-700 mb-3'>{description}</p>
                     <p className='text-lg font-semibold'>${price}</p>
                 </section>
                 <div>
