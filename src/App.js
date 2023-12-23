@@ -11,6 +11,7 @@ import Product from './pages/Product.js';
 import Design from './pages/Design.js';
 import { CartProvider } from './context/CartContext.js';
 import Cart from './components/Cart/Cart.js';
+import Checkout from './components/Checkout/Checkout.js';
 
 function App () {
     return (
@@ -20,13 +21,14 @@ function App () {
             <ItemDetailContainer /> */}
             <BrowserRouter>
                 <CartProvider>
-                    <Routes>
-                        <Route path="/" element={ <Home/> } />
+                    <Routes basename='/'>
+                        <Route path='/' element={ <Home/> } />
                         <Route index element={ <Home/> }/>
                         <Route path='/category/:categoryId' element={ <Category/> }/>
                         <Route path='/item/:itemId' element={<Product />} />
                         <Route path="/design" element={<Design />} />
                         <Route path='/cart' element={<Cart />} />
+                        <Route path='/checkout' element={<Checkout />}/>
                         <Route path='*' element={<h1>404 NOT FOUND</h1>} />
                     </Routes>
                 </CartProvider>

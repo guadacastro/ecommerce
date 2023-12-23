@@ -22,7 +22,7 @@ const Cart = () => {
                 <div className=" m-10 flex flex-row justify-between" >
                     <h3>Total: ${total()}</h3>
                     <button onClick={() => clearCart()} >Limpiar Carrito</button>
-                    <Link to='./checkout'>Checkout</Link>
+                    <Link to='/checkout'>Checkout</Link>
                 </div>
 
     
