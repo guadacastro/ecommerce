@@ -16,8 +16,8 @@ const ItemCount = ({ stock, initial, onAdd }) => {
     };
 
     return (
-        <div className="flex flex-col items-center justify-center space-y-4">
-            <div className="flex items-center space-x-4"> {/* Incrementado el espacio entre botones */}
+        <div className="flex flex-col items-stretch w-80 justify-start space-y-8">
+            <div className="flex items-center justify-center space-x-4"> {/* Incrementado el espacio entre botones */}
                 <button
                     className="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded-full focus:outline-none focus:shadow-outline"
                     onClick={decrement}
@@ -35,12 +35,13 @@ const ItemCount = ({ stock, initial, onAdd }) => {
                 </button>
             </div>
             <button
-                className="bg-gray-900 hover:bg-gray-800 text-white font-bold py-2 px-6 rounded-lg focus:outline-none focus:shadow-outline disabled:opacity-50"
+                className="bg-gray-900 hover:bg-gray-800 text-white font-bold py-2 px-6 rounded-lg focus:outline-none focus:shadow-outline disabled:opacity-50 "
                 onClick={() => onAdd(quantity)}
                 disabled={!stock}
             >
                 Add to Cart
             </button>
+
         </div>
     );
 };
